@@ -28,18 +28,18 @@
 	* Examples:
 		#### Disclaimer: some of those examples were taken from [LilyGO](https://github.com/LilyGO/TTGO-T-Beam) github account.
 		* LoRa:
-			* Send [example]().
-			* Receive [example]().
-			* Send/Receive [example]().
-			* LoRa Chat [example]().
+			* Send [example](https://github.com/Adamacenog/ESP32-TTGO-GPS-T22_v1.0-20190612-Tutorial/tree/master/LoRa/ESP32-LoRa-sender).
+			* Receive [example](https://github.com/Adamacenog/ESP32-TTGO-GPS-T22_v1.0-20190612-Tutorial/tree/master/LoRa/ESP32-LoRa-receiver).
+			* Send/Receive [example](https://github.com/Adamacenog/ESP32-TTGO-GPS-T22_v1.0-20190612-Tutorial/tree/master/LoRa/ESP32-LoRa-sender-receiver).
+			* LoRa Chat [example](https://github.com/Adamacenog/ESP32-TTGO-GPS-T22_v1.0-20190612-Tutorial/tree/master/LoRa/LoRa-Chat).
 			* Great LoRa [tutorial](https://randomnerdtutorials.com/ttgo-lora32-sx1276-arduino-ide/).
 		* GPS:
 			> The axp20x library is used to power the GPS on, by default, the boards AXP192chip comes with the GPS disabled. 
 			> * The AXP192 chip is the power system manager.
 				- You can enable / disable different modules of the board with it
 
-			* Get GPS info [example]().
-			* GPS + LoRa [example]().
+			* Get GPS info [example](https://github.com/Adamacenog/ESP32-TTGO-GPS-T22_v1.0-20190612-Tutorial/tree/master/GPS/ESP32-GPS).
+			* GPS + LoRa [example](https://github.com/Adamacenog/ESP32-TTGO-GPS-T22_v1.0-20190612-Tutorial/tree/master/GPS/LoRa%20%2B%20GPS).
 			* Great TinyGPS++ [tutorial](http://arduiniana.org/libraries/tinygpsplus/).
 	* Board schematics and pins:
-		![image]()
+		![image](https://github.com/Adamacenog/ESP32-TTGO-GPS-T22_v1.0-20190612-Tutorial/blob/master/Images/ESP32%20schematics.jpeg)
