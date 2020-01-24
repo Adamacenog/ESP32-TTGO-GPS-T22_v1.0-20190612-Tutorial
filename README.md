@@ -13,6 +13,7 @@
 				then click Ok, go to Tools -> Board -> Boards Manager, search and install "ESP32 by Espressif Systems", or follow this [guide](https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/).
 			* After you install the board software, just select on the boards menu "TTGO T1", set the upload speed to 115200, leave the rest as is and you are going to be able to upload sketches to your TTGO board.
 		* VSCode:
+			> Aparrently the GPS example is only working on the Arduino IDE. LoRa examples were not tested on VSCode, use it at your own risk.
 			* Install the [PlatformIO](https://platformio.org/?utm_source=platformio&utm_medium=piohome) extention.
 			* After the installation, create a new project with any desired name, select "TTGO T-BEAM" at the board selection, leave the framework as "Arduino" then click the "Finish" button.
 			* When the project creation is comlete, open the file "platformio.ini", and add a new line with the following:

@@ -55,7 +55,7 @@ void setup()
   axp.setPowerOutPut(AXP192_DCDC2, AXP202_ON);
   axp.setPowerOutPut(AXP192_EXTEN, AXP202_ON);
   axp.setPowerOutPut(AXP192_DCDC1, AXP202_ON);
-  GPS.begin(9600, SERIAL_8N1, 34, 12);   //17-TX 18-RX
+  GPS.begin(9600, SERIAL_8N1, 34, 12);   // 34-TX 12-RX
 
   SPI.begin(SCK,MISO,MOSI,SS);
   LoRa.setPins(SS,RST,DI0);
