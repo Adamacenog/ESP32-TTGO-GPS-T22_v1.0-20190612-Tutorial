@@ -15,7 +15,18 @@
 #define SS      18   // GPIO18 -- SX1278's CS
 #define RST     14   // GPIO14 -- SX1278's RESET
 #define DI0     26   // GPIO26 -- SX1278's IRQ(Interrupt Request)
+
+/*
+ * Band frequencies: 
+ * 433 Hz - 433E6 
+ * 868 Hz - 868E6 
+ * 915 Hz - 915E6
+ */
+ 
 #define BAND    868E6
+
+void loraData();
+void cbk(int);
 
 unsigned int counter = 0;
 

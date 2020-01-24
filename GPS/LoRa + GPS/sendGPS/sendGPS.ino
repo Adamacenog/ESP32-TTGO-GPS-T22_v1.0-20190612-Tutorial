@@ -32,9 +32,19 @@ https://github.com/mikalhart/TinyGPSPlus
 #define SS      18   // GPIO18 -- SX1278's CS
 #define RST     14   // GPIO14 -- SX1278's RESET
 #define DI0     26   // GPIO26 -- SX1278's IRQ(Interrupt Request)
+
+/*
+ * Band frequencies: 
+ * 433 Hz - 433E6 
+ * 868 Hz - 868E6 
+ * 915 Hz - 915E6
+ */
+ 
 #define BAND    868E6
 
 String gpsMsg;
+double lat = 0.0, lng = 0.0;
+int i = 0;
 
 TinyGPSPlus gps;
 HardwareSerial GPS(1);
@@ -67,34 +77,46 @@ void setup()
   //LoRa.receive();
   Serial.println("init ok");
   delay(1500);
+  Serial.print("Starting GPS, this might take a while (~ 5 min max)");
 }
 
 void loop()
 {
-  gpsMsg = "[";
-  gpsMsg += String(gps.location.lng(),6);
-  gpsMsg += ",";
-  gpsMsg += String(gps.location.lat(),6);
-  gpsMsg += "],";
-  
-  Serial.println(gpsMsg);
-
-  LoRa.beginPacket();
-  LoRa.print(gpsMsg);
-  LoRa.endPacket();
-
-  smartDelay(1000);
-
-  if (millis() > 5000 && gps.charsProcessed() < 10)
-    Serial.println(F("No GPS data received: check wiring"));
-}
-
-static void smartDelay(unsigned long ms)
-{
   unsigned long start = millis();
+
+  lat = gps.location.lat();
+  lng = gps.location.lng();
+
+  if (lat == 0.0 || lng == 0.0){
+    Serial.print(".");
+    i++;
+    if (i%30 == 0){
+      Serial.println("");
+    }
+    if (i == 300){
+      Serial.println("5 min has passsed... try getting outside, GPS is not syncing"); 
+    }
+  }
+  else {
+    gpsMsg = "[";
+    gpsMsg += String(lng,6);
+    gpsMsg += ",";
+    gpsMsg += String(lat,6);
+    gpsMsg += "],";
+    
+    Serial.println(gpsMsg);
+  
+    LoRa.beginPacket();
+    LoRa.print(gpsMsg);
+    LoRa.endPacket();
+  }
+
   do
   {
     while (GPS.available())
       gps.encode(GPS.read());
-  } while (millis() - start < ms);
+  } while (millis() - start < 1000);
+
+  if (millis() > 5000 && gps.charsProcessed() < 10)
+    Serial.println(F("No GPS data received: check wiring"));
 }
