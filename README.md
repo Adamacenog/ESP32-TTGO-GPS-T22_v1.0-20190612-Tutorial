@@ -44,6 +44,7 @@
 			> The axp20x library is used to power the GPS on, by default, the boards AXP192chip comes with the GPS disabled. 
 			> * The AXP192 chip is the power system manager.
 				- You can enable / disable different modules of the board with it
+			> 
 			> The GPS chip takes a while to synchronize the first time (~ 5min), and it needs at least 5 sattelites to show the coordinates!
 
 			* Get GPS info [example](https://github.com/Adamacenog/ESP32-TTGO-GPS-T22_v1.0-20190612-Tutorial/tree/master/GPS/ESP32-GPS).
