@@ -15,11 +15,13 @@
 		* VSCode:
 			* Install the [PlatformIO](https://platformio.org/?utm_source=platformio&utm_medium=piohome) extention.
 			> BEAWARE: PlatformIO is not reliable and its use is not advised!	
+			
 			> We are only adding its mention to this tutorial because it is a well known extension used by many people.
 
 			* After the installation, create a new project with any desired name, select "TTGO T-BEAM" at the board selection, leave the framework as "Arduino" then click the "Finish" button.
 			* When the project creation is comlete, open the file "platformio.ini", and add a new line with the following:
 				> upload_protocol = esptool
+
 				> upload_speed = 115200
 
 	* Needed libraries:
