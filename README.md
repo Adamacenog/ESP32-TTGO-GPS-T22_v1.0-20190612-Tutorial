@@ -15,12 +15,12 @@
 		* VSCode:
 			* Install the [PlatformIO](https://platformio.org/?utm_source=platformio&utm_medium=piohome) extention.
 			> BEAWARE: PlatformIO is not reliable and its use is not advised!
-			We are only adding its mention to this tutorial because it is a well known extension used by many people.
+			> We are only adding its mention to this tutorial because it is a well known extension used by many people.
 
 			* After the installation, create a new project with any desired name, select "TTGO T-BEAM" at the board selection, leave the framework as "Arduino" then click the "Finish" button.
 			* When the project creation is comlete, open the file "platformio.ini", and add a new line with the following:
 				> upload_protocol = esptool
-				upload_speed = 115200
+				> upload_speed = 115200
 
 	* Needed libraries:
 		* Lora:
@@ -42,8 +42,7 @@
 			> The axp20x library is used to power the GPS on, by default, the boards AXP192chip comes with the GPS disabled. 
 			> * The AXP192 chip is the power system manager.
 				- You can enable / disable different modules of the board with it
-		
-				* The GPS chip takes a while to synchronize the first time (~ 5min), and it needs at least 5 sattelites to show the coordinates!
+			> * The GPS chip takes a while to synchronize the first time (~ 5min), and it needs at least 5 sattelites to show the coordinates!
 
 			* Get GPS info [example](https://github.com/Adamacenog/ESP32-TTGO-GPS-T22_v1.0-20190612-Tutorial/tree/master/GPS/ESP32-GPS).
 			* GPS + LoRa [example](https://github.com/Adamacenog/ESP32-TTGO-GPS-T22_v1.0-20190612-Tutorial/tree/master/GPS/LoRa%20%2B%20GPS).
